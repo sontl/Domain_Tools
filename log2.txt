@@ -1,0 +1,5 @@
+bash: __pycache__: command not found
+bash: __pycache__: command not found
+bash: __pycache__: command not found
+bash: __pycache__: command not found
+bash: __pycache__: command not found
