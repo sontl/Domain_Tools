@@ -58,7 +58,7 @@ class Main:
 
 main = Main()
 main.start()
-main.notification("code", "vn") # testing purpose
+#main.notification("code", "vn") # testing purpose
 
 # log cron task
 from datetime import datetime
