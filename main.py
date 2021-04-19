@@ -12,10 +12,11 @@ class Main:
         line_index = 0
         for line in fin:
             line = line.strip()
-            index = line.find(".")
-            domain = line[:index]
-            tld = line[index+1:]
-            self.check_status(domain, tld)
+            if (line.find("#") < 0):
+                index = line.find(".")
+                domain = line[:index]
+                tld = line[index+1:]
+                self.check_status(domain, tld)
             line_index=line_index+1
         #close input and output files
         fin.close()
