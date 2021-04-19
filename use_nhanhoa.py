@@ -1,5 +1,5 @@
 import requests
-
+from custom_exception import ApiError
 class NhanHoa:
 
     def __init__(self, domain, tld) -> None:
@@ -12,7 +12,7 @@ class NhanHoa:
             domain=self.domain, ext=self.tld))
         if resp.status_code != 200:
             # This means something went wrong.
-            raise ApiError('GET /tasks/ {}'.format(resp.status_code))
+            raise ApiError('POST https://nhanhoa.com/service/ {}'.format(resp.status_code))
         else:
             if (resp.json()['status'] == 1):
                 return False

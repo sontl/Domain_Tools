@@ -1,5 +1,5 @@
 import requests
-
+from custom_exception import ApiError
 class Digistar:
     
     def __init__(self, domain, tld) -> None:
@@ -12,7 +12,7 @@ class Digistar:
         resp = requests.post('https://manage.digistar.vn/ds-ajax/check-domain.php', form_data)
         if resp.status_code != 200:
             # This means something went wrong.
-            raise ApiError('GET /tasks/ {}'.format(resp.status_code))
+            raise ApiError('POST https://manage.digistar.vn/ds-ajax/check-domain.php {}'.format(resp.status_code))
         else:
             status = resp.json()['status']
             if (status == "unavailable"):

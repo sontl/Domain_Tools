@@ -1,5 +1,6 @@
 from use_inet import Inet
 import pathlib
+
 class Main:
 
     current_directory = str(pathlib.Path(__file__).parent.absolute()) 
@@ -53,14 +54,12 @@ class Main:
         if (status):
             self.notification(domain, tld)
         print("|\n----------------------------------------")
-
         
+        # log cron task
+        from datetime import datetime
+        myFile = open( self.current_directory + '/log.txt', 'a') 
+        myFile.write('\nAccessed on ' + str(datetime.now()))
 
 main = Main()
 main.start()
 #main.notification("code", "vn") # testing purpose
-
-# log cron task
-from datetime import datetime
-myFile = open('~/log.txt', 'a') 
-myFile.write('\nAccessed on ' + str(datetime.now()))
