@@ -1,12 +1,12 @@
-#!/usr/local/bin python3
-
 from use_inet import Inet
-
+import pathlib
 class Main:
+
+    current_directory = str(pathlib.Path(__file__).parent.absolute()) 
 
     def start(self):
         #input file
-        fin = open("domain_list.txt", "rt")
+        fin = open(self.current_directory + "/domain_list.txt", "rt")
         #for each line in the input file
         line_index = 0
         for line in fin:
@@ -62,5 +62,5 @@ main.notification("code", "vn") # testing purpose
 
 # log cron task
 from datetime import datetime
-myFile = open('log.txt', 'a') 
+myFile = open('~/log.txt', 'a') 
 myFile.write('\nAccessed on ' + str(datetime.now()))

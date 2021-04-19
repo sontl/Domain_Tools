@@ -2,3 +2,4 @@ code.vn
 adobe.com.vn
 gem.vn
 lib.vn
+api.vn
